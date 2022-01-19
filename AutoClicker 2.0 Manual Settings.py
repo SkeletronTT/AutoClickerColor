@@ -1,18 +1,27 @@
+import os
 import numpy as np
 import pyautogui as pg
 import time
 from mss import mss
 
+# Проверка файла settings.txt
+if os.path.exists("settings.txt"):
+    print('Файл "settings.txt" подключён')
+else:
+    print('Файл "settings.txt" не найден. Запустите файл "Settings Script.py"\nЗвершение работы...')
+    input("Нажмите Enter для продолжения...")
+    exit()
+
 # Вывод настроек
 with open('settings.txt') as fs:
     lines = fs.readlines()
-Left = lines[6]
-Top = lines[7]
-Width = lines[11]
-Height = lines[12]
-R = lines[17]
-G = lines[18]
-B = lines[19]
+Left = int(lines[0])
+Top = int(lines[1])
+Width = int(lines[2])
+Height = int(lines[3])
+R = int(lines[4])
+G = int(lines[5])
+B = int(lines[6])
 
 # Захват экрана
 monitor = {
@@ -23,7 +32,6 @@ monitor = {
 }
 print(monitor)
 def FindColor(fcol, monitor={}):
-    #85 172 238
     m = mss()
     img = m.grab(monitor)
     img_arr = np.array(img)
@@ -36,6 +44,7 @@ def FindColor(fcol, monitor={}):
 
 # Искомый цвет
 fcol = (R, G, B)
+print(R, G, B)
 
 while True:
     time1 = time.time()
