@@ -17,7 +17,7 @@ AutoCliker 2.0:
 
 # ИСТОРИЯ ИЗМЕНЕНИЙ:
 
-Release Ver 1.3:
-+ AutoClicker 2.0.py
-+ Settings Script.py
-+ AutoClicker.py (в разработке)
+- Release Ver 1.3:
+  Добавлен AutoClicker 2.0.py
+  Добавлен Settings Script.py
+  AutoClicker.py (в разработке)
